@@ -1,6 +1,6 @@
 {
-  "name": "watchovr-loopback-connector-google-cloud-datastore",
-  "version": "1.0.0",
+  "name": "@Watchovr/loopback-connector-google-cloud-datastore",
+  "version": "1.0.1",
   "description": "Google Cloud Datastore connector for the LoopBack framework.",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://henriquecarv@github.com/henriquecarv/loopback-connector-google-cloud-datastore.git"
+    "url": "git://github.com/Watchovr/loopback-connector-google-cloud-datastore.git"
   },
   "keywords": [
     "connector",
