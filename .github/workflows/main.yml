@@ -6,6 +6,9 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
+    env:
+      projectId: ${{ secrets.GCP_PROJECT_ID }}
+      keyFilename: ${{ secrets.GCP_SA_KEY }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2.1.4
