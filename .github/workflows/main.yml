@@ -27,6 +27,6 @@ jobs:
       - name: Install NPM Dependencies (CI)
         run: yarn install --frozen-lockfile
       - name: Copy keyFile
-        run: echo ${{ secrets.GCP_SA_KEY }} >> ./test/serviceAccount.json
+        run: "echo ${{ secrets.GCP_SA_KEY }} >> ${{ env.keyFilename }}"
       - name: Build, Test, and Lint
         run: yarn lint && yarn test
