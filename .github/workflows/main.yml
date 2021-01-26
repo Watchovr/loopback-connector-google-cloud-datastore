@@ -9,6 +9,7 @@ jobs:
     env:
       projectId: ${{ secrets.GCP_PROJECT_ID }}
       keyFilename: test/serviceAccount.json
+      GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2.1.4
@@ -27,6 +28,6 @@ jobs:
       - name: Install NPM Dependencies (CI)
         run: yarn install --frozen-lockfile
       - name: Copy keyFile
-        run: "echo ${{ secrets.GCP_SA_KEY }} >> ${{ env.keyFilename }}"
+        run: 'echo "$GCP_SA_KEY" > ${{ env.keyFilename }}'
       - name: Build, Test, and Lint
         run: yarn lint && yarn test
