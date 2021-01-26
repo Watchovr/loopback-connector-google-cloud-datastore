@@ -27,4 +27,4 @@ jobs:
       - name: Install NPM Dependencies (CI)
         run: yarn install --frozen-lockfile
       - name: Build, Test, and Lint
-        run: yarn test
+        run: yarn lint && yarn test
