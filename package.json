@@ -1,6 +1,6 @@
 {
-  "name": "loopback-connector-google-cloud-datastore",
-  "version": "2.21.0",
+  "name": "watchovr-loopback-connector-google-cloud-datastore",
+  "version": "1.0.0",
   "description": "Google Cloud Datastore connector for the LoopBack framework.",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,9 @@
   "author": "Henrique Carvalho da Cruz <henriquecarv.cruz@gmail.com> (https://henriquecarv.com)",
   "license": "MIT",
   "homepage": "https://github.com/henriquecarv/loopback-connector-google-cloud-datastore#readme",
-  "bugs": "https://github.com/henriquecarv/loopback-connector-google-cloud-datastore/issues",
+  "bugs": {
+    "url": "https://github.com/henriquecarv/loopback-connector-google-cloud-datastore/issues"
+  },
   "dependencies": {
     "@google-cloud/datastore": "^6.3.1",
     "loopback-connector": "^5.0.1"
@@ -42,5 +44,9 @@
     "mocha": "^8.2.1",
     "prettier": "^2.2.1",
     "should": "^13.2.3"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
   }
 }
