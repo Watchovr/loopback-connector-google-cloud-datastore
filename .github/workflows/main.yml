@@ -26,5 +26,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install NPM Dependencies (CI)
         run: yarn install --frozen-lockfile
+      - name: Copy keyFile
+        run: echo {{ env.keyFilename }} >> ./test/serviceAccount.json
       - name: Build, Test, and Lint
         run: yarn lint && yarn test
