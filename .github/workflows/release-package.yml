@@ -9,7 +9,7 @@ jobs:
   publish-gpr:
     runs-on: ubuntu-latest
     env:
-      NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       # Setup .npmrc file to publish to GitHub Packages
@@ -25,7 +25,7 @@ jobs:
   publish-npmjs:
     runs-on: ubuntu-latest
     env:
-      NODE_AUTH_TOKEN: ${{secrets.NPMJS_TOKEN}}
+      NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       # Setup .npmrc file to publish to GitHub Packages
