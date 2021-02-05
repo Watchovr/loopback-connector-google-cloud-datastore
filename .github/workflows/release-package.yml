@@ -32,12 +32,10 @@ jobs:
       - uses: actions/setup-node@v2.1.4
         with:
           node-version: 14.x
-          registry-url: "https://registry.npmjs.org"
+          registry-url: "https://registry.npmjs.org/"
       - run: yarn install --frozen-lockfile
       - name: Publish to NPMJS
         run: |
-          yarn config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-          yarn config set scope "@watchovr"
           yarn config list
           yarn info
           yarn publish --access public --new-version 1.1.$(date +%s)
