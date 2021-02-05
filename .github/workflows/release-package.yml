@@ -8,6 +8,8 @@ on:
 jobs:
   publish-gpr:
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     steps:
       - uses: actions/checkout@v2
       # Setup .npmrc file to publish to GitHub Packages
@@ -19,10 +21,11 @@ jobs:
       - run: yarn install --frozen-lockfile
       # Publish to GitHub Packages
       - run: yarn publish --access public --new-version 1.1.$(date +%s)
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
   publish-npmjs:
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{secrets.NPMJS_TOKEN}}
     steps:
       - uses: actions/checkout@v2
       # Setup .npmrc file to publish to GitHub Packages
@@ -34,8 +37,6 @@ jobs:
       - name: Publish to NPMJS
         run: |
           yarn config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-          yarn config set scope "@Watchovr"
+          yarn config set scope "@watchovr"
           yarn config list
           yarn publish --access public --new-version 1.1.$(date +%s)
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPMJS_TOKEN}}
