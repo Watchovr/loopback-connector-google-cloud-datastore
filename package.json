@@ -1,6 +1,6 @@
 {
-  "name": "@Watchovr/loopback-connector-google-cloud-datastore",
-  "version": "1.0.1612487225",
+  "name": "@watchovr/loopback-connector-google-cloud-datastore",
+  "version": "1.0.1612488862",
   "description": "Google Cloud Datastore connector for the LoopBack framework.",
   "main": "index.js",
   "scripts": {
