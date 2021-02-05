@@ -20,7 +20,7 @@ jobs:
           scope: "@Watchovr"
       - run: yarn install --frozen-lockfile
       # Publish to GitHub Packages
-      - run: yarn publish --access public --new-version 1.1.$(date +%s)
+      - run: yarn publish --access public --new-version 1.1.$(date +%s) --no-git-tag-version
 
   publish-npmjs:
     runs-on: ubuntu-latest
@@ -39,4 +39,4 @@ jobs:
         run: |
           yarn config list
           yarn info
-          yarn publish --access public --new-version 1.1.$(date +%s)
+          yarn publish --access public --new-version 1.1.$(date +%s) --no-git-tag-version
