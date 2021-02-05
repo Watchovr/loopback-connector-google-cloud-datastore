@@ -18,7 +18,7 @@ jobs:
           scope: "@Watchovr"
       - run: yarn install --frozen-lockfile
       # Publish to GitHub Packages
-      - run: yarn publish --access public --new-version 1.0.$(date +%s)
+      - run: yarn publish --access public --new-version 1.1.$(date +%s)
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
   publish-npmjs:
@@ -36,6 +36,6 @@ jobs:
           yarn config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
           yarn config set scope "@Watchovr"
           yarn config list
-          yarn publish --access public --new-version 1.0.$(date +%s)
+          yarn publish --access public --new-version 1.1.$(date +%s)
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPMJS_TOKEN}}
